@@ -1,0 +1,11 @@
+{
+  "name": "deepseek-harness-sakura",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs && node scripts/sanitize-bundles.mjs",
+    "test": "node verify-products.mjs && node verify-readability.mjs"
+  },
+  "engines": { "node": "^22.19.0 || >=24.0.0" },
+  "devDependencies": { "tsdown": "0.22.2", "react": "19.2.0" }
+}

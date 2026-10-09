@@ -1,0 +1,56 @@
+/* Shared surfaces: both editions supply colors, never separate layout rules. */
+body:is([data-sakura-theme="dsh-sakura-pink"], [data-sakura-theme="dsh-sakura-purple"]) .hGyLPq_root {
+  background: var(--sakura-trajectory-fill);
+  backdrop-filter: blur(12px) saturate(.95);
+  -webkit-backdrop-filter: blur(12px) saturate(.95);
+  --dsw-alias-bg-layer-1: transparent;
+  --dsw-alias-bg-module-platform: color-mix(in srgb, var(--dsw-alias-brand-primary) 8%, transparent);
+  --dsw-alias-markdown-code-block: transparent;
+  --dsw-alias-markdown-code-block-banner: transparent;
+}
+body[data-sakura-theme] .hGyLPq_root :is(.haSm5q_split, .haSm5q_table, .QnvEwG_root, .ZNyiNW_root, .ZNyiNW_plot, .haSm5q_details, .haSm5q_overviewHeading, .haSm5q_overviewPreview, .haSm5q_programPanel, .haSm5q_programSource, .haSm5q_promptDiff, .haSm5q_historyLoadingBar, .haSm5q_historyLoadButton) {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+body[data-sakura-theme] .hGyLPq_root :is(.QnvEwG_root, .ZNyiNW_root, .haSm5q_details, .haSm5q_detailsHeader) { border-color: var(--sakura-trajectory-border); }
+body[data-sakura-theme] .hGyLPq_root .haSm5q_table { --trajectory-turn-accent: color-mix(in srgb, var(--dsw-alias-brand-primary) 26%, transparent); }
+body[data-sakura-theme] .hGyLPq_root .haSm5q_table th {
+  background: transparent;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+body[data-sakura-theme] .hGyLPq_root :is(.md-code-block, div:has(> [data-code-block-banner]), [data-code-block-banner], .jmg6Sq_output) {
+  background: transparent !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+body[data-sakura-theme] .hGyLPq_root .haSm5q_programSource pre { background: transparent !important; }
+body[data-sakura-theme] .hGyLPq_root .QnvEwG_search { background: color-mix(in srgb, var(--dsw-alias-brand-primary) 8%, transparent); }
+body[data-sakura-theme] .hGyLPq_root .haSm5q_table tr[data-selected=true] { background: color-mix(in srgb, var(--dsw-alias-brand-primary) 14%, transparent); }
+body[data-sakura-theme] .hGyLPq_root :is(.haSm5q_turnLabelActive, .haSm5q_assistantVioletBright) { color: var(--dsw-alias-brand-text); }
+body[data-sakura-theme] .hGyLPq_root .haSm5q_assistantVioletBright { background: color-mix(in srgb, var(--dsw-alias-brand-primary) 12%, transparent); }
+/* Toast is identified by its stable timer property and alert role; other alerts
+   retain their own semantics. Its dense fill gives text a predictable surface. */
+body[data-sakura-theme] [role="alert"][style*="--dsh-toast-hold"] {
+  background: var(--sakura-toast-fill);
+  color: var(--dsw-alias-toast-label);
+  border: 1px solid var(--sakura-trajectory-border);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--dsw-alias-brand-primary) 18%, transparent);
+}
+body[data-sakura-theme] [role="alert"][style*="--dsh-toast-hold"] button {
+  color: var(--dsw-alias-brand-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+body[data-sakura-theme] [role="alert"][style*="--dsh-toast-hold"] button:hover { opacity: 1; text-decoration-thickness: 2px; }
+body[data-sakura-theme] [role="alert"][style*="--dsh-toast-hold"] button:focus-visible { outline: 2px solid var(--dsw-alias-brand-text); outline-offset: 2px; }
+body[data-sakura-theme] [role="switch"][aria-checked="false"] { background: var(--sakura-switch-track-off); }
+@supports not (backdrop-filter: blur(1px)) {
+  body[data-sakura-theme] .hGyLPq_root { background: var(--sakura-trajectory-solid); }
+  body[data-sakura-theme] [role="alert"][style*="--dsh-toast-hold"] { background: var(--dsw-alias-toast-bg); }
+}
